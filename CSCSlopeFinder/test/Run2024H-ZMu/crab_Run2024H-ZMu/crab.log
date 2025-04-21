@@ -1,0 +1,527 @@
+DEBUG 2025-04-11 08:56:31.051 UTC: 	 CRAB Client version: v3.250318
+DEBUG 2025-04-11 08:56:31.052 UTC: 	 Running on: Linux lxplus972.cern.ch 5.14.0-503.34.1.el9_5.x86_64 #1 SMP PREEMPT_DYNAMIC Mon Mar 17 21:49:47 EDT 2025 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2025-04-11 08:56:31.052 UTC: 	 Not using Singularity
+DEBUG 2025-04-11 08:56:31.052 UTC: 	 Operating System: Red Hat Enterprise Linux 9.5 (Plow)
+DEBUG 2025-04-11 08:56:31.052 UTC: 	 Executing command: 'submit'
+DEBUG 2025-04-11 08:56:31.052 UTC: 	 Found CRAB cache file /afs/cern.ch/user/v/vdamante/.crab3
+INFO 2025-04-11 08:56:31.053 UTC: 	 Will use CRAB configuration file crab3_unpackAndMatchCSCGEM.py
+DEBUG 2025-04-11 08:56:31.053 UTC: 	 Loading CRAB configuration file.
+DEBUG 2025-04-11 08:56:31.083 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2025-04-11 08:56:31.095 UTC: 	 Checking credentials
+DEBUG 2025-04-11 08:56:31.095 UTC: 	 Found proxy file /tmp/x509up_u127699
+DEBUG 2025-04-11 08:56:31.095 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2025-04-11 08:56:31.095 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u127699
+DEBUG 2025-04-11 08:56:31.560 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 08:56:31.560 UTC: 	 Getting proxy life time left
+DEBUG 2025-04-11 08:56:31.560 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u127699
+DEBUG 2025-04-11 08:56:31.913 UTC: 	 output : 690175
+690175
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 08:56:31.913 UTC: 	 Proxy valid for 191:42:55 hours
+DEBUG 2025-04-11 08:56:31.913 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2025-04-11 08:56:31.960 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+DEBUG 2025-04-11 08:56:31.960 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u127699
+DEBUG 2025-04-11 08:56:32.358 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 08:56:32.358 UTC: 	 Getting myproxy life time left for de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-11 08:56:32.358 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-11 08:56:32.648 UTC: 	 output : username: de04b68b94a41902b1db2180a20aa9fd475521c3
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  timeleft: 701:10:31  (29.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 08:56:32.648 UTC: 	 Myproxy is valid: 2524200
+DEBUG 2025-04-11 08:56:32.648 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: de04b68b94a41902b1db2180a20aa9fd475521c3  - validity: 29 days, 5:10:00
+DEBUG 2025-04-11 08:56:32.648 UTC: 	 Command use: submit
+DEBUG 2025-04-11 08:56:32.648 UTC: 	 Options use: ['crab3_unpackAndMatchCSCGEM.py']
+DEBUG 2025-04-11 08:56:32.649 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2025-04-11 08:56:32.690 UTC: 	 CRABClient version: v3.250318
+DEBUG 2025-04-11 08:56:32.690 UTC: 	 Instance is prod
+DEBUG 2025-04-11 08:56:32.690 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2025-04-11 08:56:32.690 UTC: 	 Command api workflow
+DEBUG 2025-04-11 08:56:32.690 UTC: 	 Started submission
+DEBUG 2025-04-11 08:56:32.690 UTC: 	 Working on /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu
+DEBUG 2025-04-11 08:56:32.690 UTC: 	 Encoded data for curl request: subresource=backendurls
+DEBUG 2025-04-11 08:56:32.769 UTC: 	 Loading required information from the environment
+DEBUG 2025-04-11 08:56:32.769 UTC: 	 Found CMSSW_14_2_0_pre1 for el9_amd64_gcc12 with base /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1
+DEBUG 2025-04-11 08:56:32.769 UTC: 	 Loading required information from the environment
+DEBUG 2025-04-11 08:56:32.769 UTC: 	 Found CMSSW_14_2_0_pre1 for el9_amd64_gcc12 with base /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1
+DEBUG 2025-04-11 08:56:32.769 UTC: 	 UNIQUE NAME: tarUUID 16bad9bd-d2d1-4eaa-be43-765ca41ff4e4 
+DEBUG 2025-04-11 08:56:32.769 UTC: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.workArea = 'Run2024H-ZMu'
+config.General.transferLogs = True
+config.General.requestName = 'Run2024H-ZMu'
+config.General.transferOutputs = True
+config.section_('JobType')
+config.JobType.numCores = 1
+config.JobType.inputFiles = ['/afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/luts']
+config.JobType.pluginName = 'Analysis'
+config.JobType.psetName = 'run_unpack_CSCGEM_matcher.py'
+config.JobType.maxJobRuntimeMin = 420
+config.JobType.allowUndistributedCMSSW = True
+config.JobType.maxMemoryMB = 2000
+config.section_('Data')
+config.Data.publication = False
+config.Data.inputDataset = '/Muon1/Run2024H-ZMu-PromptReco-v1/RAW-RECO'
+config.Data.outputDatasetTag = 'Run2024H-ZMu'
+config.Data.inputDBS = 'global'
+config.Data.unitsPerJob = 300
+config.Data.splitting = 'FileBased'
+config.Data.outLFNDirBase = '/store/user/vdamante/GEMCSCTrigger/2024_ZMu/'
+config.section_('Site')
+config.Site.ignoreGlobalBlacklist = True
+config.Site.storageSite = 'T3_CH_CERNBOX'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2025-04-11 08:56:32.770 UTC: 	 self.config.JobType.psetName: run_unpack_CSCGEM_matcher.py
+INFO 2025-04-11 08:56:32.770 UTC: 	 Importing CMSSW configuration run_unpack_CSCGEM_matcher.py
+INFO 2025-04-11 08:56:55.836 UTC: 	 Finished importing CMSSW configuration run_unpack_CSCGEM_matcher.py
+DEBUG 2025-04-11 08:56:55.836 UTC: 	 Writing CMSSW configuration to /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/inputs/PSet.py
+DEBUG 2025-04-11 08:56:55.960 UTC: 	 The following EDM output files will be collected: []
+DEBUG 2025-04-11 08:56:55.960 UTC: 	 The following TFile output files will be collected: ['output.root']
+DEBUG 2025-04-11 08:56:55.960 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
+DEBUG 2025-04-11 08:56:55.960 UTC: 	 Loading required information from the environment
+DEBUG 2025-04-11 08:56:55.960 UTC: 	 Found CMSSW_14_2_0_pre1 for el9_amd64_gcc12 with base /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1
+DEBUG 2025-04-11 08:56:55.960 UTC: 	 Making tarball in /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/inputs/16bad9bd-d2d1-4eaa-be43-765ca41ff4e4default.tgz
+DEBUG 2025-04-11 08:56:55.961 UTC: 	 Checking directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/bin
+DEBUG 2025-04-11 08:56:55.961 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/bin to tarball
+DEBUG 2025-04-11 08:56:55.987 UTC: 	 Checking directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/python
+DEBUG 2025-04-11 08:56:55.987 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/python to tarball
+DEBUG 2025-04-11 08:56:56.035 UTC: 	 Checking directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/cfipython
+DEBUG 2025-04-11 08:56:56.035 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/cfipython to tarball
+DEBUG 2025-04-11 08:56:56.503 UTC: 	 Checking directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/lib
+DEBUG 2025-04-11 08:56:56.504 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/lib to tarball
+DEBUG 2025-04-11 08:56:56.829 UTC: 	 Checking directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/biglib
+DEBUG 2025-04-11 08:56:56.829 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/biglib to tarball
+DEBUG 2025-04-11 08:56:56.830 UTC: 	 Checking directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/module
+DEBUG 2025-04-11 08:56:56.831 UTC: 	 Checking directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/config/SCRAM/hooks
+DEBUG 2025-04-11 08:56:56.831 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/config/SCRAM/hooks to tarball
+DEBUG 2025-04-11 08:56:57.188 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/Validation/MuonCSCDigis/data to tarball
+DEBUG 2025-04-11 08:56:57.322 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/Validation/MuonCSCDigis/interface to tarball
+DEBUG 2025-04-11 08:56:57.356 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/Validation/MuonCSCDigis/python to tarball
+DEBUG 2025-04-11 08:56:57.395 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCode/GEMValidation/data to tarball
+DEBUG 2025-04-11 08:56:57.428 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCode/GEMValidation/interface to tarball
+DEBUG 2025-04-11 08:56:57.827 UTC: 	 Adding directory /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCode/GEMValidation/python to tarball
+DEBUG 2025-04-11 08:56:58.344 UTC: 	 Adding file /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/luts to tarball
+DEBUG 2025-04-11 08:56:59.411 UTC: 	 Uploading archive /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/inputs/16bad9bd-d2d1-4eaa-be43-765ca41ff4e4default.tgz (1.175781.1 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
+DEBUG 2025-04-11 08:56:59.793 UTC: 	 Encoded data for curl request: subresource=upload&objecttype=sandbox&tarballname=78f6d8f916f66c7cce3ba20ea17e889441288d733db747e80b0fbffa46fee70c.tar.gz
+DEBUG 2025-04-11 08:56:59.965 UTC: 	 sandbox 78f6d8f916f66c7cce3ba20ea17e889441288d733db747e80b0fbffa46fee70c.tar.gz is already in the S3 store, will not upload again
+DEBUG 2025-04-11 08:56:59.965 UTC: 	 Loading required information from the environment
+DEBUG 2025-04-11 08:56:59.965 UTC: 	 Found CMSSW_14_2_0_pre1 for el9_amd64_gcc12 with base /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1
+DEBUG 2025-04-11 08:56:59.965 UTC: 	 Making tarball in /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/inputs/debugFiles.tgz
+DEBUG 2025-04-11 08:56:59.970 UTC: 	 Uploading archive /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/inputs/debugFiles.tgz (4 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
+DEBUG 2025-04-11 08:56:59.973 UTC: 	 Encoded data for curl request: subresource=upload&objecttype=sandbox&tarballname=d6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz
+DEBUG 2025-04-11 08:57:00.040 UTC: 	 Will execute:
+curl -f -v -X POST  -H "User-Agent: CRAB" -F "key=vdamante/sandboxes/d6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz" -F "AWSAccessKeyId=715203df6482458ba839e73e6dab634b" -F "policy=eyJleHBpcmF0aW9uIjogIjIwMjUtMDQtMTFUMDk6NTc6MDBaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAiY3JhYmNhY2hlX3Byb2QifSwgeyJrZXkiOiAidmRhbWFudGUvc2FuZGJveGVzL2Q2NTkyMzEwZTYxYTY0NTMxNjIxMDlmYTRlYTk2Nzk3OGUwMTk5NDg0NmQyYTQwYjc2OWUyZGIwYTlkMGEwNTUudGFyLmd6In1dfQ==" -F "signature=PW9kICJRD/Qv8nEJpCDJrzA3cSQ=" -F "file=@/afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/inputs/debugFiles.tgz" "https://s3.cern.ch/crabcache_prod"
+DEBUG 2025-04-11 08:57:00.090 UTC: 	 exitcode: 0
+stdout: b''
+DEBUG 2025-04-11 08:57:00.090 UTC: 	 upload to S3 of sandbox /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/inputs/debugFiles.tgz completed
+DEBUG 2025-04-11 08:57:00.090 UTC: 	 make sure that object is ready for retrieve
+DEBUG 2025-04-11 08:57:01.091 UTC: 	 Encoded data for curl request: subresource=download&objecttype=sandbox&tarballname=d6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz&clientmethod=head_object
+DEBUG 2025-04-11 08:57:01.137 UTC: 	 PreSignedUrl to download sandbox received OK
+DEBUG 2025-04-11 08:57:01.141 UTC: 	 Will execute:
+ curl -v -s -f -o /dev/null --head  "https://s3.cern.ch/crabcache_prod/vdamante/sandboxes/d6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz?AWSAccessKeyId=715203df6482458ba839e73e6dab634b&Signature=wvFyOfZqmGx8MAH1ECwu7TqX5%2BM%3D&Expires=1744365421"
+DEBUG 2025-04-11 08:57:01.166 UTC: 	 exitcode: 0
+stdout: b''
+DEBUG 2025-04-11 08:57:01.166 UTC: 	 sandbox /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/inputs/debugFiles.tgz successfully uploaded to S3
+DEBUG 2025-04-11 08:57:01.166 UTC: 	 Result uploading input files: 78f6d8f916f66c7cce3ba20ea17e889441288d733db747e80b0fbffa46fee70c.tar.gz 
+DEBUG 2025-04-11 08:57:01.167 UTC: 	 submit() - self.configuration from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.workArea = 'Run2024H-ZMu'
+config.General.transferLogs = True
+config.General.requestName = 'Run2024H-ZMu'
+config.General.transferOutputs = True
+config.section_('JobType')
+config.JobType.numCores = 1
+config.JobType.inputFiles = ['/afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/luts']
+config.JobType.pluginName = 'Analysis'
+config.JobType.psetName = 'run_unpack_CSCGEM_matcher.py'
+config.JobType.maxJobRuntimeMin = 420
+config.JobType.allowUndistributedCMSSW = True
+config.JobType.maxMemoryMB = 2000
+config.section_('Data')
+config.Data.publication = False
+config.Data.inputDataset = '/Muon1/Run2024H-ZMu-PromptReco-v1/RAW-RECO'
+config.Data.outputDatasetTag = 'Run2024H-ZMu'
+config.Data.inputDBS = 'global'
+config.Data.unitsPerJob = 300
+config.Data.splitting = 'FileBased'
+config.Data.outLFNDirBase = '/store/user/vdamante/GEMCSCTrigger/2024_ZMu/'
+config.section_('Site')
+config.Site.ignoreGlobalBlacklist = True
+config.Site.storageSite = 'T3_CH_CERNBOX'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2025-04-11 08:57:01.167 UTC: 	 submit() - self.configreq {'dryrun': 0, 'workflow': 'crab_Run2024H-ZMu', 'saveoutput': 1, 'savelogsflag': 1, 'inputdata': '/Muon1/Run2024H-ZMu-PromptReco-v1/RAW-RECO', 'nonvaliddata': 0, 'userfiles': [], 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'useparent': 0, 'ignorelocality': 0, 'splitalgo': 'FileBased', 'algoargs': 300, 'totalunits': 0, 'lfn': '/store/user/vdamante/GEMCSCTrigger/2024_ZMu/', 'publication': 0, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'publishname2': 'Run2024H-ZMu', 'jobtype': 'Analysis', 'generator': 'pythia', 'addoutputfiles': [], 'maxjobruntime': 420, 'numcores': 1, 'maxmemory': 2000, 'priority': 10, 'nonprodsw': 1, 'asyncdest': 'T3_CH_CERNBOX', 'requireaccelerator': 0, 'oneEventMode': 0, 'extrajdl': [], 'ignoreglobalblacklist': 1, 'partialdataset': 0, 'inputblocks': []}
+DEBUG 2025-04-11 08:57:01.167 UTC: 	 submit() - jobconfig {'addoutputfiles': [], 'tfileoutfiles': ['output.root'], 'edmoutfiles': [], 'jobarch': 'el9_amd64_gcc12', 'jobminuarch': 'any', 'jobsw': 'CMSSW_14_2_0_pre1', 'inputdata': '/Muon1/Run2024H-ZMu-PromptReco-v1/RAW-RECO', 'cacheurl': 'https://cmsweb.cern.ch/S3/crabcache_prod', 'cachefilename': '78f6d8f916f66c7cce3ba20ea17e889441288d733db747e80b0fbffa46fee70c.tar.gz', 'debugfilename': 'd6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz', 'jobtype': 'Analysis'}
+INFO 2025-04-11 08:57:01.167 UTC: 	 Sending the request to the server at cmsweb.cern.ch
+DEBUG 2025-04-11 08:57:01.167 UTC: 	 Submitting {'dryrun': 0, 'workflow': 'crab_Run2024H-ZMu', 'saveoutput': 1, 'savelogsflag': 1, 'inputdata': '/Muon1/Run2024H-ZMu-PromptReco-v1/RAW-RECO', 'nonvaliddata': 0, 'userfiles': [], 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'useparent': 0, 'ignorelocality': 0, 'splitalgo': 'FileBased', 'algoargs': 300, 'totalunits': 0, 'lfn': '/store/user/vdamante/GEMCSCTrigger/2024_ZMu/', 'publication': 0, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'publishname2': 'Run2024H-ZMu', 'jobtype': 'Analysis', 'generator': 'pythia', 'addoutputfiles': [], 'maxjobruntime': 420, 'numcores': 1, 'maxmemory': 2000, 'priority': 10, 'nonprodsw': 1, 'asyncdest': 'T3_CH_CERNBOX', 'requireaccelerator': 0, 'oneEventMode': 0, 'extrajdl': [], 'ignoreglobalblacklist': 1, 'partialdataset': 0, 'inputblocks': [], 'tfileoutfiles': ['output.root'], 'edmoutfiles': [], 'jobarch': 'el9_amd64_gcc12', 'jobminuarch': 'any', 'jobsw': 'CMSSW_14_2_0_pre1', 'cacheurl': 'https://cmsweb.cern.ch/S3/crabcache_prod', 'cachefilename': '78f6d8f916f66c7cce3ba20ea17e889441288d733db747e80b0fbffa46fee70c.tar.gz', 'debugfilename': 'd6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz'} 
+DEBUG 2025-04-11 08:57:01.167 UTC: 	 Encoded data for curl request: dryrun=0&workflow=crab_Run2024H-ZMu&saveoutput=1&savelogsflag=1&inputdata=%2FMuon1%2FRun2024H-ZMu-PromptReco-v1%2FRAW-RECO&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&useparent=0&ignorelocality=0&splitalgo=FileBased&algoargs=300&totalunits=0&lfn=%2Fstore%2Fuser%2Fvdamante%2FGEMCSCTrigger%2F2024_ZMu%2F&publication=0&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&publishname2=Run2024H-ZMu&jobtype=Analysis&generator=pythia&maxjobruntime=420&numcores=1&maxmemory=2000&priority=10&nonprodsw=1&asyncdest=T3_CH_CERNBOX&requireaccelerator=0&oneEventMode=0&ignoreglobalblacklist=1&partialdataset=0&jobarch=el9_amd64_gcc12&jobminuarch=any&jobsw=CMSSW_14_2_0_pre1&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2FS3%2Fcrabcache_prod&cachefilename=78f6d8f916f66c7cce3ba20ea17e889441288d733db747e80b0fbffa46fee70c.tar.gz&debugfilename=d6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz&tfileoutfiles=output.root
+DEBUG 2025-04-11 08:57:01.213 UTC: 	 Result: {'result': [{'RequestName': '250411_085701:vdamante_crab_Run2024H-ZMu'}]}
+INFO 2025-04-11 08:57:01.216 UTC: 	 Success: Your task has been delivered to the prod CRAB3 server.
+INFO 2025-04-11 08:57:01.216 UTC: 	 Task name: 250411_085701:vdamante_crab_Run2024H-ZMu
+INFO 2025-04-11 08:57:01.216 UTC: 	 Project dir: Run2024H-ZMu/crab_Run2024H-ZMu
+INFO 2025-04-11 08:57:01.216 UTC: 	 Please use ' crab status -d Run2024H-ZMu/crab_Run2024H-ZMu ' to check how the submission process proceeds.
+DEBUG 2025-04-11 08:57:01.216 UTC: 	 About to return
+INFO 2025-04-11 08:57:01.218 UTC: 	 Log file is /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/crab.log
+DEBUG 2025-04-11 09:57:58.175 UTC: 	 CRAB Client version: v3.250318
+DEBUG 2025-04-11 09:57:58.176 UTC: 	 Running on: Linux lxplus972.cern.ch 5.14.0-503.34.1.el9_5.x86_64 #1 SMP PREEMPT_DYNAMIC Mon Mar 17 21:49:47 EDT 2025 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2025-04-11 09:57:58.176 UTC: 	 Not using Singularity
+DEBUG 2025-04-11 09:57:58.176 UTC: 	 Operating System: Red Hat Enterprise Linux 9.5 (Plow)
+DEBUG 2025-04-11 09:57:58.176 UTC: 	 Executing command: 'status'
+DEBUG 2025-04-11 09:57:58.179 UTC: 	 Found CRAB cache file /afs/cern.ch/user/v/vdamante/.crab3
+DEBUG 2025-04-11 09:57:58.201 UTC: 	 Checking credentials
+DEBUG 2025-04-11 09:57:58.201 UTC: 	 Found proxy file /tmp/x509up_u127699
+DEBUG 2025-04-11 09:57:58.201 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2025-04-11 09:57:58.201 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u127699
+DEBUG 2025-04-11 09:57:59.246 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 09:57:59.246 UTC: 	 Getting proxy life time left
+DEBUG 2025-04-11 09:57:59.246 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u127699
+DEBUG 2025-04-11 09:58:00.057 UTC: 	 output : 686486
+686486
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 09:58:00.058 UTC: 	 Proxy valid for 190:41:26 hours
+DEBUG 2025-04-11 09:58:00.058 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2025-04-11 09:58:00.431 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+DEBUG 2025-04-11 09:58:00.431 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u127699
+DEBUG 2025-04-11 09:58:01.151 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 09:58:01.151 UTC: 	 Getting myproxy life time left for de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-11 09:58:01.151 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-11 09:58:01.502 UTC: 	 output : username: de04b68b94a41902b1db2180a20aa9fd475521c3
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  timeleft: 700:09:02  (29.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 09:58:01.502 UTC: 	 Myproxy is valid: 2520540
+DEBUG 2025-04-11 09:58:01.502 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: de04b68b94a41902b1db2180a20aa9fd475521c3  - validity: 29 days, 4:09:00
+DEBUG 2025-04-11 09:58:01.502 UTC: 	 Retrieving username ...
+DEBUG 2025-04-11 09:58:01.502 UTC: 	 Retrieving username from CRIC...
+DEBUG 2025-04-11 09:58:02.489 UTC: 	 username is vdamante
+INFO 2025-04-11 09:58:04.372 UTC: 	 Rucio client intialized for account vdamante
+DEBUG 2025-04-11 09:58:04.373 UTC: 	 Command use: status
+DEBUG 2025-04-11 09:58:04.373 UTC: 	 Options use: ['-d', 'Run2024H-ZMu/crab_Run2024H-ZMu/']
+DEBUG 2025-04-11 09:58:04.373 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2025-04-11 09:58:04.445 UTC: 	 CRABClient version: v3.250318
+DEBUG 2025-04-11 09:58:04.445 UTC: 	 Instance is prod
+DEBUG 2025-04-11 09:58:04.445 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2025-04-11 09:58:04.445 UTC: 	 Command api workflow
+DEBUG 2025-04-11 09:58:04.446 UTC: 	 Encoded data for curl request: subresource=search&workflow=250411_085701%3Avdamante_crab_Run2024H-ZMu
+DEBUG 2025-04-11 09:58:04.544 UTC: 	 Got information from server oracle database: {'desc': {'columns': ['tm_taskname', 'tm_activity', 'tm_task_status', 'tm_task_command', 'tm_start_time', 'tm_start_injection', 'tm_end_injection', 'tm_task_failure', 'tm_job_sw', 'tm_job_arch', 'tm_input_dataset', 'tm_nonvalid_input_dataset', 'tm_use_parent', 'tm_site_whitelist', 'tm_site_blacklist', 'tm_split_algo', 'tm_split_args', 'tm_user_sandbox', 'tm_cache_url', 'tm_username', 'tm_user_dn', 'tm_user_vo', 'tm_user_role', 'tm_user_group', 'tm_publish_name', 'tm_publish_groupname', 'tm_asyncdest', 'tm_dbs_url', 'tm_publish_dbs_url', 'tm_publication', 'tm_outfiles', 'tm_tfile_outfiles', 'tm_edm_outfiles', 'tm_job_type', 'tm_generator', 'tm_events_per_lumi', 'tm_arguments', 'tm_save_logs', 'tw_name', 'tm_user_infiles', 'tm_maxjobruntime', 'tm_numcores', 'tm_maxmemory', 'tm_priority', 'tm_output_dataset', 'tm_task_warnings', 'tm_user_webdir', 'tm_scriptexe', 'tm_scriptargs', 'tm_extrajdl', 'tm_collector', 'tm_schedd', 'tm_dry_run', 'tm_user_files', 'tm_transfer_outputs', 'tm_output_lfn', 'tm_ignore_locality', 'tm_fail_limit', 'tm_one_event_mode', 'tm_secondary_input_dataset', 'tm_primary_dataset', 'tm_last_publication', 'tm_debug_files', 'clusterid', 'tm_ignore_global_blacklist', 'tm_submitter_ip_addr', 'tm_totalunits', 'tm_ddm_reqid', 'tm_user_config', 'tm_transfer_container', 'tm_transfer_rule', 'tm_publish_rule', 'tm_multipub_rule', 'tm_job_min_microarch', 'tm_dagman_status', 'tm_num_jobs', 'tm_uploaded']}, 'result': ['250411_085701:vdamante_crab_Run2024H-ZMu', 'None', 'TAPERECALL', 'SUBMIT', '2025-04-11 08:57:01.206997', 'None', 'None', 'None', 'CMSSW_14_2_0_pre1', 'el9_amd64_gcc12', '/Muon1/Run2024H-ZMu-PromptReco-v1/RAW-RECO', 'F', '0', '[]', '[]', 'FileBased', "{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 300, 'runs': [], 'lumis': []}", '78f6d8f916f66c7cce3ba20ea17e889441288d733db747e80b0fbffa46fee70c.tar.gz', 'https://cmsweb.cern.ch/S3/crabcache_prod', 'vdamante', "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante", 'cms', 'None', 'None', 'Run2024H-ZMu-00000000000000000000000000000000', 'F', 'T3_CH_CERNBOX', 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'F', '[]', "['output.root']", '[]', 'Analysis', 'pythia', 'None', '{}', 'T', 'crab-prod-tw01', '[]', '420', '1', '2000', '10', 'None', "['Data recall from tape in progress: ok/all = 533/4199 = 12%\\nRucio rule details at https://cms-rucio-webui.cern.ch/rule?rule_id=ab1aacbe56a94444addca699a51a59d0']", 'None', 'None', '[]', '[]', 'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', 'None', 'F', '[]', 'T', '/store/user/vdamante/GEMCSCTrigger/2024_ZMu/', 'F', 'None', 'F', 'None', 'Muon1', 'None', 'd6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz', 'None', 'T', '188.185.101.116', '0.0', 'ab1aacbe56a94444addca699a51a59d0', '{"partialdataset": false, "requireaccelerator": false, "acceleratorparams": null, "inputblocks": null}', 'None', 'None', 'None', 'None', 'any', 'NOT_READY', '0', 'F']}
+INFO 2025-04-11 09:58:04.545 UTC: 	 CRAB project directory:		/afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu
+INFO 2025-04-11 09:58:04.545 UTC: 	 Task name:			250411_085701:vdamante_crab_Run2024H-ZMu
+INFO 2025-04-11 09:58:04.545 UTC: 	 Grid scheduler - Task Worker:	N/A yet - crab-prod-tw01
+INFO 2025-04-11 09:58:04.545 UTC: 	 Status on the CRAB server:	TAPERECALL on command SUBMIT
+INFO 2025-04-11 09:58:04.545 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/250411_085701%3Avdamante_crab_Run2024H-ZMu
+INFO 2025-04-11 09:58:04.559 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=vdamante&var-task=250411_085701%3Avdamante_crab_Run2024H-ZMu&from=1744358221000&to=now
+WARNING 2025-04-11 09:58:04.562 UTC: 	 Warning:			Data recall from tape in progress: ok/all = 533/4199 = 12%
+				Rucio rule details at https://cms-rucio-webui.cern.ch/rule?rule_id=ab1aacbe56a94444addca699a51a59d0
+DEBUG 2025-04-11 09:58:04.562 UTC: 	 The task has not been submitted to the Grid scheduler yet. Not printing job information.
+INFO 2025-04-11 09:58:04.578 UTC: 	 Log file is /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/crab.log
+DEBUG 2025-04-11 11:40:42.641 UTC: 	 CRAB Client version: v3.250318
+DEBUG 2025-04-11 11:40:42.642 UTC: 	 Running on: Linux lxplus956.cern.ch 5.14.0-503.26.1.el9_5.x86_64 #1 SMP PREEMPT_DYNAMIC Mon Feb 10 05:23:56 EST 2025 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2025-04-11 11:40:42.642 UTC: 	 Not using Singularity
+DEBUG 2025-04-11 11:40:42.642 UTC: 	 Operating System: Red Hat Enterprise Linux 9.5 (Plow)
+DEBUG 2025-04-11 11:40:42.642 UTC: 	 Executing command: 'status'
+DEBUG 2025-04-11 11:40:42.644 UTC: 	 Found CRAB cache file /afs/cern.ch/user/v/vdamante/.crab3
+DEBUG 2025-04-11 11:40:42.664 UTC: 	 Checking credentials
+DEBUG 2025-04-11 11:40:42.691 UTC: 	 Proxy file /tmp/x509up_u127699 not found
+DEBUG 2025-04-11 11:40:42.691 UTC: 	 Creating new proxy for 172:00 hours
+DEBUG 2025-04-11 11:40:42.691 UTC: 	 Executing command :
+ voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /tmp/x509up_u127699 --valid 192:00 --voms cms:/cms
+DEBUG 2025-04-11 11:40:48.856 UTC: 	 output : 
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 11:40:48.856 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u127699
+DEBUG 2025-04-11 11:40:49.343 UTC: 	 output : 691198
+691198
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 11:40:49.343 UTC: 	 Proxy created.
+DEBUG 2025-04-11 11:40:49.343 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2025-04-11 11:40:49.410 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+DEBUG 2025-04-11 11:40:49.410 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u127699
+DEBUG 2025-04-11 11:40:49.933 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 11:40:49.933 UTC: 	 Getting myproxy life time left for de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-11 11:40:49.933 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-11 11:40:50.570 UTC: 	 output : username: de04b68b94a41902b1db2180a20aa9fd475521c3
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  timeleft: 698:26:13  (29.1 days)
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 11:40:50.570 UTC: 	 Myproxy is valid: 2514360
+DEBUG 2025-04-11 11:40:50.570 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: de04b68b94a41902b1db2180a20aa9fd475521c3  - validity: 29 days, 2:26:00
+DEBUG 2025-04-11 11:40:50.570 UTC: 	 Retrieving username ...
+DEBUG 2025-04-11 11:40:50.570 UTC: 	 Retrieving username from CRIC...
+DEBUG 2025-04-11 11:40:51.658 UTC: 	 username is vdamante
+INFO 2025-04-11 11:40:52.833 UTC: 	 Rucio client intialized for account vdamante
+DEBUG 2025-04-11 11:40:52.834 UTC: 	 Command use: status
+DEBUG 2025-04-11 11:40:52.834 UTC: 	 Options use: ['-d', 'Run2024H-ZMu/crab_Run2024H-ZMu/']
+DEBUG 2025-04-11 11:40:52.834 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2025-04-11 11:40:52.913 UTC: 	 CRABClient version: v3.250318
+DEBUG 2025-04-11 11:40:52.913 UTC: 	 Instance is prod
+DEBUG 2025-04-11 11:40:52.913 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2025-04-11 11:40:52.913 UTC: 	 Command api workflow
+DEBUG 2025-04-11 11:40:52.914 UTC: 	 Encoded data for curl request: subresource=search&workflow=250411_085701%3Avdamante_crab_Run2024H-ZMu
+DEBUG 2025-04-11 11:40:52.974 UTC: 	 Got information from server oracle database: {'desc': {'columns': ['tm_taskname', 'tm_activity', 'tm_task_status', 'tm_task_command', 'tm_start_time', 'tm_start_injection', 'tm_end_injection', 'tm_task_failure', 'tm_job_sw', 'tm_job_arch', 'tm_input_dataset', 'tm_nonvalid_input_dataset', 'tm_use_parent', 'tm_site_whitelist', 'tm_site_blacklist', 'tm_split_algo', 'tm_split_args', 'tm_user_sandbox', 'tm_cache_url', 'tm_username', 'tm_user_dn', 'tm_user_vo', 'tm_user_role', 'tm_user_group', 'tm_publish_name', 'tm_publish_groupname', 'tm_asyncdest', 'tm_dbs_url', 'tm_publish_dbs_url', 'tm_publication', 'tm_outfiles', 'tm_tfile_outfiles', 'tm_edm_outfiles', 'tm_job_type', 'tm_generator', 'tm_events_per_lumi', 'tm_arguments', 'tm_save_logs', 'tw_name', 'tm_user_infiles', 'tm_maxjobruntime', 'tm_numcores', 'tm_maxmemory', 'tm_priority', 'tm_output_dataset', 'tm_task_warnings', 'tm_user_webdir', 'tm_scriptexe', 'tm_scriptargs', 'tm_extrajdl', 'tm_collector', 'tm_schedd', 'tm_dry_run', 'tm_user_files', 'tm_transfer_outputs', 'tm_output_lfn', 'tm_ignore_locality', 'tm_fail_limit', 'tm_one_event_mode', 'tm_secondary_input_dataset', 'tm_primary_dataset', 'tm_last_publication', 'tm_debug_files', 'clusterid', 'tm_ignore_global_blacklist', 'tm_submitter_ip_addr', 'tm_totalunits', 'tm_ddm_reqid', 'tm_user_config', 'tm_transfer_container', 'tm_transfer_rule', 'tm_publish_rule', 'tm_multipub_rule', 'tm_job_min_microarch', 'tm_dagman_status', 'tm_num_jobs', 'tm_uploaded']}, 'result': ['250411_085701:vdamante_crab_Run2024H-ZMu', 'None', 'TAPERECALL', 'SUBMIT', '2025-04-11 08:57:01.206997', 'None', 'None', 'None', 'CMSSW_14_2_0_pre1', 'el9_amd64_gcc12', '/Muon1/Run2024H-ZMu-PromptReco-v1/RAW-RECO', 'F', '0', '[]', '[]', 'FileBased', "{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 300, 'runs': [], 'lumis': []}", '78f6d8f916f66c7cce3ba20ea17e889441288d733db747e80b0fbffa46fee70c.tar.gz', 'https://cmsweb.cern.ch/S3/crabcache_prod', 'vdamante', "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante", 'cms', 'None', 'None', 'Run2024H-ZMu-00000000000000000000000000000000', 'F', 'T3_CH_CERNBOX', 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'F', '[]', "['output.root']", '[]', 'Analysis', 'pythia', 'None', '{}', 'T', 'crab-prod-tw01', '[]', '420', '1', '2000', '10', 'None', "['Data recall from tape in progress: ok/all = 533/4199 = 12%\\nRucio rule details at https://cms-rucio-webui.cern.ch/rule?rule_id=ab1aacbe56a94444addca699a51a59d0']", 'None', 'None', '[]', '[]', 'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', 'None', 'F', '[]', 'T', '/store/user/vdamante/GEMCSCTrigger/2024_ZMu/', 'F', 'None', 'F', 'None', 'Muon1', 'None', 'd6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz', 'None', 'T', '188.185.101.116', '0.0', 'ab1aacbe56a94444addca699a51a59d0', '{"partialdataset": false, "requireaccelerator": false, "acceleratorparams": null, "inputblocks": null}', 'None', 'None', 'None', 'None', 'any', 'NOT_READY', '0', 'F']}
+INFO 2025-04-11 11:40:52.975 UTC: 	 CRAB project directory:		/afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu
+INFO 2025-04-11 11:40:52.975 UTC: 	 Task name:			250411_085701:vdamante_crab_Run2024H-ZMu
+INFO 2025-04-11 11:40:52.975 UTC: 	 Grid scheduler - Task Worker:	N/A yet - crab-prod-tw01
+INFO 2025-04-11 11:40:52.975 UTC: 	 Status on the CRAB server:	TAPERECALL on command SUBMIT
+INFO 2025-04-11 11:40:52.976 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/250411_085701%3Avdamante_crab_Run2024H-ZMu
+INFO 2025-04-11 11:40:52.995 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=vdamante&var-task=250411_085701%3Avdamante_crab_Run2024H-ZMu&from=1744358221000&to=now
+WARNING 2025-04-11 11:40:52.995 UTC: 	 Warning:			Data recall from tape in progress: ok/all = 533/4199 = 12%
+				Rucio rule details at https://cms-rucio-webui.cern.ch/rule?rule_id=ab1aacbe56a94444addca699a51a59d0
+DEBUG 2025-04-11 11:40:52.996 UTC: 	 The task has not been submitted to the Grid scheduler yet. Not printing job information.
+INFO 2025-04-11 11:40:53.003 UTC: 	 Log file is /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/crab.log
+DEBUG 2025-04-11 14:43:07.830 UTC: 	 CRAB Client version: v3.250318
+DEBUG 2025-04-11 14:43:07.831 UTC: 	 Running on: Linux lxplus956.cern.ch 5.14.0-503.26.1.el9_5.x86_64 #1 SMP PREEMPT_DYNAMIC Mon Feb 10 05:23:56 EST 2025 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2025-04-11 14:43:07.831 UTC: 	 Not using Singularity
+DEBUG 2025-04-11 14:43:07.831 UTC: 	 Operating System: Red Hat Enterprise Linux 9.5 (Plow)
+DEBUG 2025-04-11 14:43:07.831 UTC: 	 Executing command: 'status'
+DEBUG 2025-04-11 14:43:07.832 UTC: 	 Found CRAB cache file /afs/cern.ch/user/v/vdamante/.crab3
+DEBUG 2025-04-11 14:43:07.921 UTC: 	 Checking credentials
+DEBUG 2025-04-11 14:43:07.921 UTC: 	 Found proxy file /tmp/x509up_u127699
+DEBUG 2025-04-11 14:43:07.921 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2025-04-11 14:43:07.921 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u127699
+DEBUG 2025-04-11 14:43:08.498 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 14:43:08.499 UTC: 	 Getting proxy life time left
+DEBUG 2025-04-11 14:43:08.499 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u127699
+DEBUG 2025-04-11 14:43:08.983 UTC: 	 output : 680259
+680259
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 14:43:08.984 UTC: 	 Proxy valid for 188:57:39 hours
+DEBUG 2025-04-11 14:43:08.984 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2025-04-11 14:43:09.051 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+DEBUG 2025-04-11 14:43:09.051 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u127699
+DEBUG 2025-04-11 14:43:09.554 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 14:43:09.554 UTC: 	 Getting myproxy life time left for de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-11 14:43:09.554 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-11 14:43:09.899 UTC: 	 output : username: de04b68b94a41902b1db2180a20aa9fd475521c3
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  timeleft: 695:23:54  (29.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 14:43:09.900 UTC: 	 Myproxy is valid: 2503380
+DEBUG 2025-04-11 14:43:09.900 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: de04b68b94a41902b1db2180a20aa9fd475521c3  - validity: 28 days, 23:23:00
+DEBUG 2025-04-11 14:43:09.900 UTC: 	 Retrieving username ...
+DEBUG 2025-04-11 14:43:09.900 UTC: 	 Retrieving username from CRIC...
+DEBUG 2025-04-11 14:43:10.559 UTC: 	 username is vdamante
+INFO 2025-04-11 14:43:11.727 UTC: 	 Rucio client intialized for account vdamante
+DEBUG 2025-04-11 14:43:11.728 UTC: 	 Command use: status
+DEBUG 2025-04-11 14:43:11.728 UTC: 	 Options use: ['-d', 'Run2024H-ZMu/crab_Run2024H-ZMu/']
+DEBUG 2025-04-11 14:43:11.728 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2025-04-11 14:43:11.786 UTC: 	 CRABClient version: v3.250318
+DEBUG 2025-04-11 14:43:11.786 UTC: 	 Instance is prod
+DEBUG 2025-04-11 14:43:11.786 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2025-04-11 14:43:11.786 UTC: 	 Command api workflow
+DEBUG 2025-04-11 14:43:11.786 UTC: 	 Encoded data for curl request: subresource=search&workflow=250411_085701%3Avdamante_crab_Run2024H-ZMu
+DEBUG 2025-04-11 14:43:11.868 UTC: 	 Got information from server oracle database: {'desc': {'columns': ['tm_taskname', 'tm_activity', 'tm_task_status', 'tm_task_command', 'tm_start_time', 'tm_start_injection', 'tm_end_injection', 'tm_task_failure', 'tm_job_sw', 'tm_job_arch', 'tm_input_dataset', 'tm_nonvalid_input_dataset', 'tm_use_parent', 'tm_site_whitelist', 'tm_site_blacklist', 'tm_split_algo', 'tm_split_args', 'tm_user_sandbox', 'tm_cache_url', 'tm_username', 'tm_user_dn', 'tm_user_vo', 'tm_user_role', 'tm_user_group', 'tm_publish_name', 'tm_publish_groupname', 'tm_asyncdest', 'tm_dbs_url', 'tm_publish_dbs_url', 'tm_publication', 'tm_outfiles', 'tm_tfile_outfiles', 'tm_edm_outfiles', 'tm_job_type', 'tm_generator', 'tm_events_per_lumi', 'tm_arguments', 'tm_save_logs', 'tw_name', 'tm_user_infiles', 'tm_maxjobruntime', 'tm_numcores', 'tm_maxmemory', 'tm_priority', 'tm_output_dataset', 'tm_task_warnings', 'tm_user_webdir', 'tm_scriptexe', 'tm_scriptargs', 'tm_extrajdl', 'tm_collector', 'tm_schedd', 'tm_dry_run', 'tm_user_files', 'tm_transfer_outputs', 'tm_output_lfn', 'tm_ignore_locality', 'tm_fail_limit', 'tm_one_event_mode', 'tm_secondary_input_dataset', 'tm_primary_dataset', 'tm_last_publication', 'tm_debug_files', 'clusterid', 'tm_ignore_global_blacklist', 'tm_submitter_ip_addr', 'tm_totalunits', 'tm_ddm_reqid', 'tm_user_config', 'tm_transfer_container', 'tm_transfer_rule', 'tm_publish_rule', 'tm_multipub_rule', 'tm_job_min_microarch', 'tm_dagman_status', 'tm_num_jobs', 'tm_uploaded']}, 'result': ['250411_085701:vdamante_crab_Run2024H-ZMu', 'None', 'TAPERECALL', 'SUBMIT', '2025-04-11 08:57:01.206997', 'None', 'None', 'None', 'CMSSW_14_2_0_pre1', 'el9_amd64_gcc12', '/Muon1/Run2024H-ZMu-PromptReco-v1/RAW-RECO', 'F', '0', '[]', '[]', 'FileBased', "{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 300, 'runs': [], 'lumis': []}", '78f6d8f916f66c7cce3ba20ea17e889441288d733db747e80b0fbffa46fee70c.tar.gz', 'https://cmsweb.cern.ch/S3/crabcache_prod', 'vdamante', "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante", 'cms', 'None', 'None', 'Run2024H-ZMu-00000000000000000000000000000000', 'F', 'T3_CH_CERNBOX', 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'F', '[]', "['output.root']", '[]', 'Analysis', 'pythia', 'None', '{}', 'T', 'crab-prod-tw01', '[]', '420', '1', '2000', '10', 'None', "['Data recall from tape in progress: ok/all = 533/4199 = 12%\\nRucio rule details at https://cms-rucio-webui.cern.ch/rule?rule_id=ab1aacbe56a94444addca699a51a59d0']", 'None', 'None', '[]', '[]', 'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', 'None', 'F', '[]', 'T', '/store/user/vdamante/GEMCSCTrigger/2024_ZMu/', 'F', 'None', 'F', 'None', 'Muon1', 'None', 'd6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz', 'None', 'T', '188.185.101.116', '0.0', 'ab1aacbe56a94444addca699a51a59d0', '{"partialdataset": false, "requireaccelerator": false, "acceleratorparams": null, "inputblocks": null}', 'None', 'None', 'None', 'None', 'any', 'NOT_READY', '0', 'F']}
+INFO 2025-04-11 14:43:11.868 UTC: 	 CRAB project directory:		/afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu
+INFO 2025-04-11 14:43:11.869 UTC: 	 Task name:			250411_085701:vdamante_crab_Run2024H-ZMu
+INFO 2025-04-11 14:43:11.869 UTC: 	 Grid scheduler - Task Worker:	N/A yet - crab-prod-tw01
+INFO 2025-04-11 14:43:11.869 UTC: 	 Status on the CRAB server:	TAPERECALL on command SUBMIT
+INFO 2025-04-11 14:43:11.869 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/250411_085701%3Avdamante_crab_Run2024H-ZMu
+INFO 2025-04-11 14:43:11.882 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=vdamante&var-task=250411_085701%3Avdamante_crab_Run2024H-ZMu&from=1744358221000&to=now
+WARNING 2025-04-11 14:43:11.883 UTC: 	 Warning:			Data recall from tape in progress: ok/all = 533/4199 = 12%
+				Rucio rule details at https://cms-rucio-webui.cern.ch/rule?rule_id=ab1aacbe56a94444addca699a51a59d0
+DEBUG 2025-04-11 14:43:11.883 UTC: 	 The task has not been submitted to the Grid scheduler yet. Not printing job information.
+INFO 2025-04-11 14:43:11.912 UTC: 	 Log file is /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/crab.log
+DEBUG 2025-04-11 15:18:15.888 UTC: 	 CRAB Client version: v3.250318
+DEBUG 2025-04-11 15:18:15.889 UTC: 	 Running on: Linux lxplus956.cern.ch 5.14.0-503.26.1.el9_5.x86_64 #1 SMP PREEMPT_DYNAMIC Mon Feb 10 05:23:56 EST 2025 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2025-04-11 15:18:15.889 UTC: 	 Not using Singularity
+DEBUG 2025-04-11 15:18:15.889 UTC: 	 Operating System: Red Hat Enterprise Linux 9.5 (Plow)
+DEBUG 2025-04-11 15:18:15.889 UTC: 	 Executing command: 'status'
+DEBUG 2025-04-11 15:18:15.889 UTC: 	 Found CRAB cache file /afs/cern.ch/user/v/vdamante/.crab3
+DEBUG 2025-04-11 15:18:15.898 UTC: 	 Checking credentials
+DEBUG 2025-04-11 15:18:15.955 UTC: 	 Found proxy file /tmp/x509up_u127699
+DEBUG 2025-04-11 15:18:15.955 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2025-04-11 15:18:15.955 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u127699
+DEBUG 2025-04-11 15:18:17.342 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 15:18:17.342 UTC: 	 Getting proxy life time left
+DEBUG 2025-04-11 15:18:17.342 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u127699
+DEBUG 2025-04-11 15:18:18.437 UTC: 	 output : 678149
+678149
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 15:18:18.437 UTC: 	 Proxy valid for 188:22:29 hours
+DEBUG 2025-04-11 15:18:18.438 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2025-04-11 15:18:18.553 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+DEBUG 2025-04-11 15:18:18.553 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u127699
+DEBUG 2025-04-11 15:18:19.557 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 15:18:19.558 UTC: 	 Getting myproxy life time left for de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-11 15:18:19.558 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-11 15:18:19.886 UTC: 	 output : username: de04b68b94a41902b1db2180a20aa9fd475521c3
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  timeleft: 694:48:44  (29.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-11 15:18:19.887 UTC: 	 Myproxy is valid: 2501280
+DEBUG 2025-04-11 15:18:19.887 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: de04b68b94a41902b1db2180a20aa9fd475521c3  - validity: 28 days, 22:48:00
+DEBUG 2025-04-11 15:18:19.887 UTC: 	 Retrieving username ...
+DEBUG 2025-04-11 15:18:19.887 UTC: 	 Retrieving username from CRIC...
+DEBUG 2025-04-11 15:18:20.581 UTC: 	 username is vdamante
+INFO 2025-04-11 15:18:21.806 UTC: 	 Rucio client intialized for account vdamante
+DEBUG 2025-04-11 15:18:21.807 UTC: 	 Command use: status
+DEBUG 2025-04-11 15:18:21.807 UTC: 	 Options use: ['-d', 'Run2024H-ZMu/crab_Run2024H-ZMu/']
+DEBUG 2025-04-11 15:18:21.807 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2025-04-11 15:18:21.930 UTC: 	 CRABClient version: v3.250318
+DEBUG 2025-04-11 15:18:21.930 UTC: 	 Instance is prod
+DEBUG 2025-04-11 15:18:21.930 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2025-04-11 15:18:21.930 UTC: 	 Command api workflow
+DEBUG 2025-04-11 15:18:21.931 UTC: 	 Encoded data for curl request: subresource=search&workflow=250411_085701%3Avdamante_crab_Run2024H-ZMu
+DEBUG 2025-04-11 15:18:22.015 UTC: 	 Got information from server oracle database: {'desc': {'columns': ['tm_taskname', 'tm_activity', 'tm_task_status', 'tm_task_command', 'tm_start_time', 'tm_start_injection', 'tm_end_injection', 'tm_task_failure', 'tm_job_sw', 'tm_job_arch', 'tm_input_dataset', 'tm_nonvalid_input_dataset', 'tm_use_parent', 'tm_site_whitelist', 'tm_site_blacklist', 'tm_split_algo', 'tm_split_args', 'tm_user_sandbox', 'tm_cache_url', 'tm_username', 'tm_user_dn', 'tm_user_vo', 'tm_user_role', 'tm_user_group', 'tm_publish_name', 'tm_publish_groupname', 'tm_asyncdest', 'tm_dbs_url', 'tm_publish_dbs_url', 'tm_publication', 'tm_outfiles', 'tm_tfile_outfiles', 'tm_edm_outfiles', 'tm_job_type', 'tm_generator', 'tm_events_per_lumi', 'tm_arguments', 'tm_save_logs', 'tw_name', 'tm_user_infiles', 'tm_maxjobruntime', 'tm_numcores', 'tm_maxmemory', 'tm_priority', 'tm_output_dataset', 'tm_task_warnings', 'tm_user_webdir', 'tm_scriptexe', 'tm_scriptargs', 'tm_extrajdl', 'tm_collector', 'tm_schedd', 'tm_dry_run', 'tm_user_files', 'tm_transfer_outputs', 'tm_output_lfn', 'tm_ignore_locality', 'tm_fail_limit', 'tm_one_event_mode', 'tm_secondary_input_dataset', 'tm_primary_dataset', 'tm_last_publication', 'tm_debug_files', 'clusterid', 'tm_ignore_global_blacklist', 'tm_submitter_ip_addr', 'tm_totalunits', 'tm_ddm_reqid', 'tm_user_config', 'tm_transfer_container', 'tm_transfer_rule', 'tm_publish_rule', 'tm_multipub_rule', 'tm_job_min_microarch', 'tm_dagman_status', 'tm_num_jobs', 'tm_uploaded']}, 'result': ['250411_085701:vdamante_crab_Run2024H-ZMu', 'None', 'TAPERECALL', 'SUBMIT', '2025-04-11 08:57:01.206997', 'None', 'None', 'None', 'CMSSW_14_2_0_pre1', 'el9_amd64_gcc12', '/Muon1/Run2024H-ZMu-PromptReco-v1/RAW-RECO', 'F', '0', '[]', '[]', 'FileBased', "{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 300, 'runs': [], 'lumis': []}", '78f6d8f916f66c7cce3ba20ea17e889441288d733db747e80b0fbffa46fee70c.tar.gz', 'https://cmsweb.cern.ch/S3/crabcache_prod', 'vdamante', "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante", 'cms', 'None', 'None', 'Run2024H-ZMu-00000000000000000000000000000000', 'F', 'T3_CH_CERNBOX', 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'F', '[]', "['output.root']", '[]', 'Analysis', 'pythia', 'None', '{}', 'T', 'crab-prod-tw01', '[]', '420', '1', '2000', '10', 'None', "['Data recall from tape in progress: ok/all = 533/4199 = 12%\\nRucio rule details at https://cms-rucio-webui.cern.ch/rule?rule_id=ab1aacbe56a94444addca699a51a59d0']", 'None', 'None', '[]', '[]', 'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', 'None', 'F', '[]', 'T', '/store/user/vdamante/GEMCSCTrigger/2024_ZMu/', 'F', 'None', 'F', 'None', 'Muon1', 'None', 'd6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz', 'None', 'T', '188.185.101.116', '0.0', 'ab1aacbe56a94444addca699a51a59d0', '{"partialdataset": false, "requireaccelerator": false, "acceleratorparams": null, "inputblocks": null}', 'None', 'None', 'None', 'None', 'any', 'NOT_READY', '0', 'F']}
+INFO 2025-04-11 15:18:22.015 UTC: 	 CRAB project directory:		/afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu
+INFO 2025-04-11 15:18:22.015 UTC: 	 Task name:			250411_085701:vdamante_crab_Run2024H-ZMu
+INFO 2025-04-11 15:18:22.015 UTC: 	 Grid scheduler - Task Worker:	N/A yet - crab-prod-tw01
+INFO 2025-04-11 15:18:22.016 UTC: 	 Status on the CRAB server:	TAPERECALL on command SUBMIT
+INFO 2025-04-11 15:18:22.016 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/250411_085701%3Avdamante_crab_Run2024H-ZMu
+INFO 2025-04-11 15:18:22.035 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=vdamante&var-task=250411_085701%3Avdamante_crab_Run2024H-ZMu&from=1744358221000&to=now
+WARNING 2025-04-11 15:18:22.035 UTC: 	 Warning:			Data recall from tape in progress: ok/all = 533/4199 = 12%
+				Rucio rule details at https://cms-rucio-webui.cern.ch/rule?rule_id=ab1aacbe56a94444addca699a51a59d0
+DEBUG 2025-04-11 15:18:22.035 UTC: 	 The task has not been submitted to the Grid scheduler yet. Not printing job information.
+INFO 2025-04-11 15:18:22.040 UTC: 	 Log file is /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/crab.log
+DEBUG 2025-04-14 07:45:22.648 UTC: 	 CRAB Client version: v3.250318
+DEBUG 2025-04-14 07:45:22.649 UTC: 	 Running on: Linux lxplus936.cern.ch 5.14.0-503.26.1.el9_5.x86_64 #1 SMP PREEMPT_DYNAMIC Mon Feb 10 05:23:56 EST 2025 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2025-04-14 07:45:22.649 UTC: 	 Not using Singularity
+DEBUG 2025-04-14 07:45:22.649 UTC: 	 Operating System: Red Hat Enterprise Linux 9.5 (Plow)
+DEBUG 2025-04-14 07:45:22.649 UTC: 	 Executing command: 'status'
+DEBUG 2025-04-14 07:45:22.650 UTC: 	 Found CRAB cache file /afs/cern.ch/user/v/vdamante/.crab3
+DEBUG 2025-04-14 07:45:22.719 UTC: 	 Checking credentials
+DEBUG 2025-04-14 07:45:22.719 UTC: 	 Proxy file /tmp/x509up_u127699 not found
+DEBUG 2025-04-14 07:45:22.719 UTC: 	 Creating new proxy for 172:00 hours
+DEBUG 2025-04-14 07:45:22.719 UTC: 	 Executing command :
+ voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /tmp/x509up_u127699 --valid 192:00 --voms cms:/cms
+DEBUG 2025-04-14 07:45:28.277 UTC: 	 output : 
+ error: 
+ retcode : 0
+DEBUG 2025-04-14 07:45:28.277 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u127699
+DEBUG 2025-04-14 07:45:28.627 UTC: 	 output : 691199
+691198
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-14 07:45:28.627 UTC: 	 Proxy created.
+DEBUG 2025-04-14 07:45:28.628 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2025-04-14 07:45:28.673 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+DEBUG 2025-04-14 07:45:28.673 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u127699
+DEBUG 2025-04-14 07:45:29.013 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-14 07:45:29.013 UTC: 	 Getting myproxy life time left for de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-14 07:45:29.013 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l de04b68b94a41902b1db2180a20aa9fd475521c3
+DEBUG 2025-04-14 07:45:29.336 UTC: 	 output : username: de04b68b94a41902b1db2180a20aa9fd475521c3
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  timeleft: 630:21:34  (26.3 days)
+
+ error: 
+ retcode : 0
+DEBUG 2025-04-14 07:45:29.336 UTC: 	 Myproxy is valid: 2269260
+DEBUG 2025-04-14 07:45:29.336 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: de04b68b94a41902b1db2180a20aa9fd475521c3  - validity: 26 days, 6:21:00
+DEBUG 2025-04-14 07:45:29.336 UTC: 	 Retrieving username ...
+DEBUG 2025-04-14 07:45:29.336 UTC: 	 Retrieving username from CRIC...
+DEBUG 2025-04-14 07:45:30.065 UTC: 	 username is vdamante
+INFO 2025-04-14 07:45:30.771 UTC: 	 Rucio client intialized for account vdamante
+DEBUG 2025-04-14 07:45:30.771 UTC: 	 Command use: status
+DEBUG 2025-04-14 07:45:30.771 UTC: 	 Options use: ['-d', 'Run2024H-ZMu/crab_Run2024H-ZMu/']
+DEBUG 2025-04-14 07:45:30.771 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2025-04-14 07:45:30.809 UTC: 	 CRABClient version: v3.250318
+DEBUG 2025-04-14 07:45:30.809 UTC: 	 Instance is prod
+DEBUG 2025-04-14 07:45:30.809 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2025-04-14 07:45:30.809 UTC: 	 Command api workflow
+DEBUG 2025-04-14 07:45:30.809 UTC: 	 Encoded data for curl request: subresource=search&workflow=250411_085701%3Avdamante_crab_Run2024H-ZMu
+DEBUG 2025-04-14 07:45:30.860 UTC: 	 Got information from server oracle database: {'desc': {'columns': ['tm_taskname', 'tm_activity', 'tm_task_status', 'tm_task_command', 'tm_start_time', 'tm_start_injection', 'tm_end_injection', 'tm_task_failure', 'tm_job_sw', 'tm_job_arch', 'tm_input_dataset', 'tm_nonvalid_input_dataset', 'tm_use_parent', 'tm_site_whitelist', 'tm_site_blacklist', 'tm_split_algo', 'tm_split_args', 'tm_user_sandbox', 'tm_cache_url', 'tm_username', 'tm_user_dn', 'tm_user_vo', 'tm_user_role', 'tm_user_group', 'tm_publish_name', 'tm_publish_groupname', 'tm_asyncdest', 'tm_dbs_url', 'tm_publish_dbs_url', 'tm_publication', 'tm_outfiles', 'tm_tfile_outfiles', 'tm_edm_outfiles', 'tm_job_type', 'tm_generator', 'tm_events_per_lumi', 'tm_arguments', 'tm_save_logs', 'tw_name', 'tm_user_infiles', 'tm_maxjobruntime', 'tm_numcores', 'tm_maxmemory', 'tm_priority', 'tm_output_dataset', 'tm_task_warnings', 'tm_user_webdir', 'tm_scriptexe', 'tm_scriptargs', 'tm_extrajdl', 'tm_collector', 'tm_schedd', 'tm_dry_run', 'tm_user_files', 'tm_transfer_outputs', 'tm_output_lfn', 'tm_ignore_locality', 'tm_fail_limit', 'tm_one_event_mode', 'tm_secondary_input_dataset', 'tm_primary_dataset', 'tm_last_publication', 'tm_debug_files', 'clusterid', 'tm_ignore_global_blacklist', 'tm_submitter_ip_addr', 'tm_totalunits', 'tm_ddm_reqid', 'tm_user_config', 'tm_transfer_container', 'tm_transfer_rule', 'tm_publish_rule', 'tm_multipub_rule', 'tm_job_min_microarch', 'tm_dagman_status', 'tm_num_jobs', 'tm_uploaded']}, 'result': ['250411_085701:vdamante_crab_Run2024H-ZMu', 'None', 'TAPERECALL', 'SUBMIT', '2025-04-11 08:57:01.206997', 'None', 'None', 'None', 'CMSSW_14_2_0_pre1', 'el9_amd64_gcc12', '/Muon1/Run2024H-ZMu-PromptReco-v1/RAW-RECO', 'F', '0', '[]', '[]', 'FileBased', "{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 300, 'runs': [], 'lumis': []}", '78f6d8f916f66c7cce3ba20ea17e889441288d733db747e80b0fbffa46fee70c.tar.gz', 'https://cmsweb.cern.ch/S3/crabcache_prod', 'vdamante', "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vdamante/CN=842025/CN=Valeria D'Amante", 'cms', 'None', 'None', 'Run2024H-ZMu-00000000000000000000000000000000', 'F', 'T3_CH_CERNBOX', 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'F', '[]', "['output.root']", '[]', 'Analysis', 'pythia', 'None', '{}', 'T', 'crab-prod-tw01', '[]', '420', '1', '2000', '10', 'None', "['Data recall from tape in progress: ok/all = 533/4199 = 12%\\nRucio rule details at https://cms-rucio-webui.cern.ch/rule?rule_id=ab1aacbe56a94444addca699a51a59d0']", 'None', 'None', '[]', '[]', 'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', 'None', 'F', '[]', 'T', '/store/user/vdamante/GEMCSCTrigger/2024_ZMu/', 'F', 'None', 'F', 'None', 'Muon1', 'None', 'd6592310e61a6453162109fa4ea967978e01994846d2a40b769e2db0a9d0a055.tar.gz', 'None', 'T', '188.185.101.116', '0.0', 'ab1aacbe56a94444addca699a51a59d0', '{"partialdataset": false, "requireaccelerator": false, "acceleratorparams": null, "inputblocks": null}', 'None', 'None', 'None', 'None', 'any', 'NOT_READY', '0', 'F']}
+INFO 2025-04-14 07:45:30.861 UTC: 	 CRAB project directory:		/afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu
+INFO 2025-04-14 07:45:30.861 UTC: 	 Task name:			250411_085701:vdamante_crab_Run2024H-ZMu
+INFO 2025-04-14 07:45:30.861 UTC: 	 Grid scheduler - Task Worker:	N/A yet - crab-prod-tw01
+INFO 2025-04-14 07:45:30.861 UTC: 	 Status on the CRAB server:	TAPERECALL on command SUBMIT
+INFO 2025-04-14 07:45:30.861 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/250411_085701%3Avdamante_crab_Run2024H-ZMu
+INFO 2025-04-14 07:45:30.868 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=vdamante&var-task=250411_085701%3Avdamante_crab_Run2024H-ZMu&from=1744358221000&to=now
+WARNING 2025-04-14 07:45:30.868 UTC: 	 Warning:			Data recall from tape in progress: ok/all = 533/4199 = 12%
+				Rucio rule details at https://cms-rucio-webui.cern.ch/rule?rule_id=ab1aacbe56a94444addca699a51a59d0
+DEBUG 2025-04-14 07:45:30.869 UTC: 	 The task has not been submitted to the Grid scheduler yet. Not printing job information.
+INFO 2025-04-14 07:45:30.944 UTC: 	 Log file is /afs/cern.ch/work/v/vdamante/CMSSW_14_2_0_pre1/src/GEMCSCTriggerTest/CSCSlopeFinder/test/Run2024H-ZMu/crab_Run2024H-ZMu/crab.log
