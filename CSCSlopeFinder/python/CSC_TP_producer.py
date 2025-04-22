@@ -97,8 +97,6 @@ process.source = cms.Source(
 if options.unpackGEM:
       process.source.labelRawDataLikeMC = cms.untracked.bool(False)
 
-
-
 ####### ERA Stuff Setup BEGIN ########
 cond_mc = {
   'Run2_2016_HIPM': 'auto:run2_mc_pre_vfp',
