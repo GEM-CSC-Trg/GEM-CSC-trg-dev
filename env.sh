@@ -28,9 +28,9 @@ get_os_prefix() {
 do_install_cmssw() {
   export SCRAM_ARCH=$1
   local CMSSW_VER=$2
-    if ! [ -f "$this_dir/soft/$CMSSW_VER/.installed" ]; then
-    run_cmd mkdir -p "$this_dir/soft"
-    run_cmd cd "$this_dir/soft"
+    if ! [ -f "$ANALYSIS_SOFT_PATH/$CMSSW_VER/.installed" ]; then
+    run_cmd mkdir -p "$ANALYSIS_SOFT_PATH"
+    run_cmd cd "$ANALYSIS_SOFT_PATH"
     run_cmd source /cvmfs/cms.cern.ch/cmsset_default.sh
     if [ -d $CMSSW_VER ]; then
       echo "Removing incomplete $CMSSW_VER installation..."
@@ -46,7 +46,7 @@ do_install_cmssw() {
     fi
     run_cmd scram b -j8
     run_cmd cd "$this_dir"
-    run_cmd touch "$this_dir/soft/$CMSSW_VER/.installed"
+    run_cmd touch "$ANALYSIS_SOFT_PATH/$CMSSW_VER/.installed"
   fi
 }
 
@@ -91,12 +91,11 @@ load_env() {
   local this_file="$( [ ! -z "$ZSH_VERSION" ] && echo "${(%):-%x}" || echo "${BASH_SOURCE[0]}" )"
   local this_dir="$( cd "$( dirname "$this_file" )" && pwd )"
 
-  export ANALYSIS_PATH="$this_dir"
-  export PYTHONPATH="$ANALYSIS_PATH:$PYTHONPATH" # can be moved according to needs (e.g. in law there is hhInference)
+  export FLAF_PATH="$this_dir"
+  [ -z "$FLAF_ENVIRONMENT_PATH" ] && export FLAF_ENVIRONMENT_PATH="/afs/cern.ch/work/k/kandroso/public/flaf_env_2025_04"
+
   [ -z "$LAW_HOME" ] && export LAW_HOME="$ANALYSIS_PATH/.law"
   [ -z "$LAW_CONFIG_FILE" ] && export LAW_CONFIG_FILE="$ANALYSIS_PATH/config/law.cfg"
-  [ -z "$LAW_HOME" ] && export LAW_HOME="$ANALYSIS_PATH/.law"
-
   [ -z "$ANALYSIS_DATA_PATH" ] && export ANALYSIS_DATA_PATH="$ANALYSIS_PATH/data"
   [ -z "$X509_USER_PROXY" ] && export X509_USER_PROXY="$ANALYSIS_DATA_PATH/voms.proxy"
 
@@ -108,7 +107,7 @@ load_env() {
   local os_prefix=$(get_os_prefix $os_version)
   local node_os=$os_prefix$os_version
 
-  local cmssw_ver=CMSSW_14_2_0_pre1
+  local cmssw_ver=CMSSW_14_1_7
   local target_os_version=9
   local target_os_prefix=$(get_os_prefix $target_os_version)
   local target_os_gt_prefix=$(get_os_prefix $target_os_version 1)
@@ -119,18 +118,30 @@ load_env() {
 
   install_cmssw "$env_file" $node_os $target_os $CMSSW_ARCH $cmssw_ver
 
+  export PYTHONPATH="$ANALYSIS_PATH:$PYTHONPATH"
+
   if [ ! -z $ZSH_VERSION ]; then
     autoload bashcompinit
     bashcompinit
   fi
-  source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_105 x86_64-${os_prefix}${os_version}-gcc13-opt
-  source /afs/cern.ch/user/m/mrieger/public/law_sw/setup.sh
-
+  source "$FLAF_ENVIRONMENT_PATH/bin/activate"
   source "$( law completion )"
   current_args=( "$@" )
   set --
   source /cvmfs/cms.cern.ch/rucio/setup-py3.sh &> /dev/null
   set -- "${current_args[@]}"
+  export PATH="$ANALYSIS_SOFT_PATH/bin:$PATH"
+  alias cmsEnv="env -i HOME=$HOME ANALYSIS_PATH=$ANALYSIS_PATH ANALYSIS_DATA_PATH=$ANALYSIS_DATA_PATH X509_USER_PROXY=$X509_USER_PROXY FLAF_CMSSW_BASE=$FLAF_CMSSW_BASE FLAF_CMSSW_ARCH=$FLAF_CMSSW_ARCH $ANALYSIS_PATH/cmsEnv.sh"
+
+  # source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_105 x86_64-${os_prefix}${os_version}-gcc13-opt
+  # source /afs/cern.ch/user/m/mrieger/public/law_sw/setup.sh
+  ####
+  # source /cvmfs/cms.cern.ch/common/crab-setup.sh
+  # source "$( law completion )"
+  # current_args=( "$@" )
+  # set --
+  # source /cvmfs/cms.cern.ch/rucio/setup-py3.sh &> /dev/null
+  # set -- "${current_args[@]}"
 
     #   if [[ $node_os == $target_os ]]; then
     #     export CMSSW_SINGULARITY=""
@@ -139,8 +150,9 @@ load_env() {
     #     export CMSSW_SINGULARITY="/cvmfs/cms.cern.ch/common/cmssw-$target_os"
     #     local env_cmd="$CMSSW_SINGULARITY --command-to-run"
     #   fi
-  export PATH="$ANALYSIS_SOFT_PATH/bin:$PATH"
-  alias cmsEnv="env -i HOME=$HOME ANALYSIS_PATH=$ANALYSIS_PATH ANALYSIS_DATA_PATH=$ANALYSIS_DATA_PATH X509_USER_PROXY=$X509_USER_PROXY FLAF_CMSSW_BASE=$FLAF_CMSSW_BASE FLAF_CMSSW_ARCH=$FLAF_CMSSW_ARCH $ANALYSIS_PATH/cmsEnv.sh"
+  #####
+  # export PATH="$ANALYSIS_SOFT_PATH/bin:$PATH"
+  # alias cmsEnv="env -i HOME=$HOME ANALYSIS_PATH=$ANALYSIS_PATH ANALYSIS_DATA_PATH=$ANALYSIS_DATA_PATH X509_USER_PROXY=$X509_USER_PROXY FLAF_CMSSW_BASE=$FLAF_CMSSW_BASE FLAF_CMSSW_ARCH=$FLAF_CMSSW_ARCH $ANALYSIS_PATH/cmsEnv.sh"
 }
 
 
