@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> f9de01987e235fecabd88cb0dea1b2921dff619e
 run_cmd() {
-  echo "> $@"
+  # echo "> $@"
   "$@"
   RESULT=$?
   if (( $RESULT != 0 )); then
@@ -28,21 +24,22 @@ get_os_prefix() {
   fi
 }
 
-
 do_install_cmssw() {
-  export SCRAM_ARCH=$1
-  local CMSSW_VER=$2
+  export CMSSW_VER=$1
+  export SCRAM_ARCH=$2
+  echo "when installing cmssw"
+  echo "$@"
   if ! [ -f "$ANALYSIS_SOFT_PATH/$CMSSW_VER/.installed" ]; then
     run_cmd mkdir -p "$ANALYSIS_SOFT_PATH"
-    run_cmd cd "$ANALYSIS_SOFT_PATH"
+    cd "$ANALYSIS_SOFT_PATH"
     run_cmd source /cvmfs/cms.cern.ch/cmsset_default.sh
     if [ -d $CMSSW_VER ]; then
       echo "Removing incomplete $CMSSW_VER installation..."
       run_cmd rm -rf $CMSSW_VER
     fi
-    echo "Creating $CMSSW_VER area for in $PWD ..."
+    echo "Creating $CMSSW_VER area in $PWD ..."
     run_cmd scramv1 project CMSSW $CMSSW_VER
-    run_cmd cd $CMSSW_VER/src
+    cd $CMSSW_VER/src
     eval `scramv1 runtime -sh`
     if [[ $(type -t apply_cmssw_customization_steps) == function ]] ; then
       run_cmd apply_cmssw_customization_steps
@@ -51,7 +48,6 @@ do_install_cmssw() {
     run_cmd touch "$ANALYSIS_SOFT_PATH/$CMSSW_VER/.installed"
   fi
 }
-
 
 install() {
   local env_file="$1"
@@ -90,13 +86,7 @@ install_cmssw() {
 
 load_flaf_env() {
   local cmssw_version=${1:-CMSSW_14_1_7} # Default CMSSW version if not provided
-
-<<<<<<< HEAD
-load_flaf_env() {
-
-=======
->>>>>>> f9de01987e235fecabd88cb0dea1b2921dff619e
-  [ -z "$FLAF_ENVIRONMENT_PATH" ] && export FLAF_ENVIRONMENT_PATH="/afs/cern.ch/work/k/kandroso/public/flaf_env_2024_08"
+  [ -z "$FLAF_ENVIRONMENT_PATH" ] && export FLAF_ENVIRONMENT_PATH="/afs/cern.ch/work/k/kandroso/public/flaf_env_2025_04"
 
   [ -z "$LAW_HOME" ] && export LAW_HOME="$ANALYSIS_PATH/.law"
   [ -z "$LAW_CONFIG_FILE" ] && export LAW_CONFIG_FILE="$ANALYSIS_PATH/config/law.cfg"
@@ -111,23 +101,16 @@ load_flaf_env() {
   local os_prefix=$(get_os_prefix $os_version)
   local node_os=$os_prefix$os_version
 
-<<<<<<< HEAD
-  local flaf_cmssw_ver=CMSSW_14_1_7
-=======
->>>>>>> f9de01987e235fecabd88cb0dea1b2921dff619e
   local target_os_version=9
   local target_os_prefix=$(get_os_prefix $target_os_version)
   local target_os_gt_prefix=$(get_os_prefix $target_os_version 1)
   local target_os=$target_os_prefix$target_os_version
-<<<<<<< HEAD
-  export FLAF_CMSSW_BASE="$ANALYSIS_PATH/soft/$flaf_cmssw_ver"
-  export FLAF_CMSSW_ARCH="${target_os_gt_prefix}${target_os_version}_amd64_gcc12"
-  install_cmssw "$env_file" $node_os $target_os $FLAF_CMSSW_ARCH $flaf_cmssw_ver
-=======
   export FLAF_CMSSW_BASE="$ANALYSIS_PATH/soft/$cmssw_version"
   export FLAF_CMSSW_ARCH="${target_os_gt_prefix}${target_os_version}_amd64_gcc12"
+  echo "Setting up environment for $cmssw_version"
+
   install_cmssw "$env_file" $node_os $target_os $FLAF_CMSSW_ARCH $cmssw_version
->>>>>>> f9de01987e235fecabd88cb0dea1b2921dff619e
+
   export PYTHONPATH="$ANALYSIS_PATH:$PYTHONPATH"
 
   if [ ! -z $ZSH_VERSION ]; then
@@ -142,17 +125,17 @@ load_flaf_env() {
   set -- "${current_args[@]}"
   export PATH="$ANALYSIS_SOFT_PATH/bin:$PATH"
   alias cmsEnv="env -i HOME=$HOME ANALYSIS_PATH=$ANALYSIS_PATH ANALYSIS_DATA_PATH=$ANALYSIS_DATA_PATH X509_USER_PROXY=$X509_USER_PROXY FLAF_CMSSW_BASE=$FLAF_CMSSW_BASE FLAF_CMSSW_ARCH=$FLAF_CMSSW_ARCH $FLAF_PATH/cmsEnv.sh"
+  # echo ${cmsEnv}
 }
 
 source_env_fn() {
   local env_file="$1"
-  local cmd="$2"
-  local cmssw_version="$3"
-
-  local this_file="$( [ ! -z "$ZSH_VERSION" ] && echo "${(%):-%x}" || echo "${BASH_SOURCE[0]}" )"
-  local this_dir="$( cd "$( dirname "$this_file" )" && pwd )"
-
-  export FLAF_PATH="$this_dir"
+  local cmssw_version="$2"
+  local cmd="$3"
+  # echo "env_file = $env_file"
+  # echo "cmd = $cmd"
+  # echo "cmssw_version = $cmssw_version"
+  # echo "$@"
 
   local this_file="$( [ ! -z "$ZSH_VERSION" ] && echo "${(%):-%x}" || echo "${BASH_SOURCE[0]}" )"
   local this_dir="$( cd "$( dirname "$this_file" )" && pwd )"
@@ -169,11 +152,7 @@ source_env_fn() {
   if [ "$cmd" = "install_cmssw" ]; then
     do_install_cmssw "$cmssw_version" "${@:4}"
   else
-<<<<<<< HEAD
-    load_flaf_env "$env_file"
-=======
-    load_flaf_env "$cmssw_version"
->>>>>>> f9de01987e235fecabd88cb0dea1b2921dff619e
+    load_flaf_env $cmssw_version
   fi
 }
 
