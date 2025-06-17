@@ -9,3 +9,5 @@ Where ```pickevents.txt``` is a table of
 ```
 runNumber:LumiBlock:Event
 ```
+
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookPickEvents
