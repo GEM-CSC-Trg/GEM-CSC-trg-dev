@@ -39,12 +39,14 @@ do_install_cmssw() {
     fi
     echo "Creating $CMSSW_VER area in $PWD ..."
     run_cmd scramv1 project CMSSW $CMSSW_VER
-    cd $CMSSW_VER/src
-    eval `scramv1 runtime -sh`
+    run_cmd cd $CMSSW_VER/src
+    run_cmd eval `scramv1 runtime -sh`
+
     if [[ $(type -t apply_cmssw_customization_steps) == function ]] ; then
       run_cmd apply_cmssw_customization_steps
     fi
     run_cmd scram b -j8
+    run_cmd cd "$this_dir"
     run_cmd touch "$ANALYSIS_SOFT_PATH/$CMSSW_VER/.installed"
   fi
 }
@@ -91,10 +93,14 @@ load_flaf_env() {
   [ -z "$LAW_HOME" ] && export LAW_HOME="$ANALYSIS_PATH/.law"
   [ -z "$LAW_CONFIG_FILE" ] && export LAW_CONFIG_FILE="$ANALYSIS_PATH/config/law.cfg"
   [ -z "$ANALYSIS_DATA_PATH" ] && export ANALYSIS_DATA_PATH="$ANALYSIS_PATH/data"
+  [ -z "$ANALYSIS_BIN_PATH" ] && export ANALYSIS_BIN_PATH="$ANALYSIS_PATH/bin"
   [ -z "$X509_USER_PROXY" ] && export X509_USER_PROXY="$ANALYSIS_DATA_PATH/voms.proxy"
 
   if [[ ! -d "$ANALYSIS_DATA_PATH" ]]; then
     run_cmd mkdir -p "$ANALYSIS_DATA_PATH"
+  fi
+  if [[ ! -d "$ANALYSIS_BIN_PATH" ]]; then
+    run_cmd mkdir -p "$ANALYSIS_BIN_PATH"
   fi
 
   local os_version=$(cat /etc/os-release | grep VERSION_ID | sed -E 's/VERSION_ID="([0-9]+).*"/\1/')
@@ -109,7 +115,7 @@ load_flaf_env() {
   export FLAF_CMSSW_ARCH="${target_os_gt_prefix}${target_os_version}_amd64_gcc12"
   echo "Setting up environment for $cmssw_version"
 
-  install_cmssw "$env_file" $node_os $target_os $FLAF_CMSSW_ARCH $cmssw_version
+  run_cmd install_cmssw "$env_file" $node_os $target_os $FLAF_CMSSW_ARCH $cmssw_version
 
   export PYTHONPATH="$ANALYSIS_PATH:$PYTHONPATH"
 
